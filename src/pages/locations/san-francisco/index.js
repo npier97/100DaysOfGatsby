@@ -2,12 +2,12 @@ import Layout from "components/layout"
 import * as React from "react"
 import { headingStyles } from "utils/styles"
 
-const IndexPage = () => (
+const SanFranciscoPage = () => (
   <Layout>
     <main>
-      <h1 style={headingStyles}>Home page</h1>
+    <h1 style={headingStyles}>San Francisco</h1>
     </main>
   </Layout>
 )
 
-export default IndexPage
+export default SanFranciscoPage

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "AudioCORE",
@@ -6,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "04GS0gBW-cxjpoUxPh6f4TObK8ryIPOdWHMqYqfvyRY",
+        accessToken: process.env.DELIVERY_API_ACCESS_TOKEN,
         spaceId: "svx3i9ubu8jk",
       },
     },
@@ -15,6 +19,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
+    `gatsby-alias-imports`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -23,5 +28,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          components: "src/components",
+          utils: "src/utils",
+        }
+      }
+    }
   ],
 };
