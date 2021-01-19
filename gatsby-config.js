@@ -5,7 +5,6 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "AudioCORE",
-    siteUrl,
   },
   plugins: [
     {
