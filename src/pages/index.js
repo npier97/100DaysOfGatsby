@@ -1,13 +1,12 @@
-import Layout from "components/layout"
-import * as React from "react"
-import { headingStyles } from "utils/styles"
+import Layout from "components/layout";
+import { StyledH1 } from "components/styledComponents";
+import * as React from "react";
+import { commonMsgs } from "utils/commonMsgs";
 
 const IndexPage = () => (
   <Layout>
-    <main>
-      <h1 style={headingStyles}>Home page</h1>
-    </main>
+    <StyledH1>{commonMsgs.welcome}</StyledH1>
   </Layout>
 )
 
-export default IndexPage
+export default IndexPage;

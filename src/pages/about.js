@@ -1,13 +1,12 @@
-import Layout from "components/layout"
-import * as React from "react"
-import { headingStyles } from "utils/styles"
+import Layout from "components/layout";
+import { StyledH1 } from "components/styledComponents";
+import * as React from "react";
+import { commonMsgs } from "utils/commonMsgs";
 
 const AboutPage = () => (
   <Layout>
-    <main>
-      <h1 style={headingStyles}>Our story</h1>
-    </main>
+    <StyledH1>{commonMsgs.ourStory}</StyledH1>
   </Layout>
 )
 
-export default AboutPage
+export default AboutPage;

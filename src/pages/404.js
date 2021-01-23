@@ -1,41 +1,38 @@
-import Layout from "components/layout"
-import { Link } from "gatsby"
-import * as React from "react"
-import { headingStyles } from "utils/styles"
+import { StyledH1 } from "components/styledComponents";
+import { Link } from "gatsby";
+import * as React from "react";
+import styled from "styled-components";
+import { commonMsgs } from "utils/commonMsgs";
+import { CSS_ALIGN, CSS_BACKGROUND_COLOR, CSS_COLOR, CSS_FONT_WEIGHT } from "utils/theme";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Container = styled.div({
+  maxWidth: 1600,
+  margin: "10px auto",
+  padding: "50px",
+  textAlign: CSS_ALIGN.CENTER,
+  color: CSS_COLOR.CODE_STYLE,
+  backgroundColor: CSS_BACKGROUND_COLOR.CODE_STYLE,
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+});
+
+const StyledLink = styled(Link)({
+  fontWeight: CSS_FONT_WEIGHT.BOLD,
+  color: CSS_COLOR.CODE_STYLE,
+});
 
 const NotFoundPage = () => (
-  <Layout>
-    <title>Not found</title>
-    <h1 style={headingStyles}>Page not found</h1>
-    <p style={paragraphStyles}>
-      Sorry{" "}
+  <Container>
+    <title>{commonMsgs.pageNotFound}</title>
+    <StyledH1>{commonMsgs.pageNotFound}</StyledH1>
+    <p>
+      {commonMsgs.sorry}{" "}
       <span role="img" aria-label="Pensive emoji">
         😔
       </span>{" "}
-      we couldn’t find what you were looking for.
-      <br />
-      {process.env.NODE_ENV === "development" ? (
-        <>
-          <br />
-          Try creating a page in <code style={codeStyles}>src/pages/</code>.
-          <br />
-        </>
-      ) : null}
-      <br />
-      <Link to="/">Go home</Link>.
+      {commonMsgs.weCouldntFind}.
     </p>
-  </Layout>
+    <StyledLink to="/">{commonMsgs.backToHomePage}</StyledLink>
+  </Container>
 )
 
-export default NotFoundPage
+export default NotFoundPage;

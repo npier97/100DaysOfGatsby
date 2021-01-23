@@ -1,5 +1,5 @@
-import React from "react"
-import Header from "./header"
+import React from "react";
+import Header from "./header";
 
 const pageStyles = {
   color: "#232129",
@@ -10,10 +10,10 @@ const pageStyles = {
 }
 
 const Layout = ({ children }) => (
-  <div style={pageStyles}>
+  <main style={pageStyles}>
     <Header />
     {children}
-  </div>
+  </main>
 )
 
 export default Layout
